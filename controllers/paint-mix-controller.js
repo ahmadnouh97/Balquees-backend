@@ -77,7 +77,7 @@ function validatePaintMix(paintMix) {
         createdAt:   Joi.date().default(Date.now())
     };
 
-    return Joi.validate(paintMix, schema);
+    return Joi.compile(schema).validate(paintMix);
 }
 
 

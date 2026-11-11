@@ -75,7 +75,7 @@ function validateEngobMix(engobMix) {
         createdAt:  Joi.date().default(Date.now())
     };
 
-    return Joi.validate(engobMix, schema);
+    return Joi.compile(schema).validate(engobMix);
 }
 
 module.exports = {

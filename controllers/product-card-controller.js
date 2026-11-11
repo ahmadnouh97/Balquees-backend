@@ -242,7 +242,7 @@ function validateProductCard(productCard) {
         bodyMix:        Joi.string().required()
     };
 
-    return Joi.validate(productCard, schema);
+    return Joi.compile(schema).validate(productCard);
 }
 
 module.exports = {getProductCards, createProductCard, updateProductCard, deleteProductCard, attachImage};

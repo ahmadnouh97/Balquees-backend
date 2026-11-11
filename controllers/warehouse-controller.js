@@ -66,7 +66,7 @@ function validateWarehouse(material) {
         materials: Joi.array().optional()
     };
 
-    return Joi.validate(material, schema);
+    return Joi.compile(schema).validate(material);
 }
 
 
