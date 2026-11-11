@@ -77,7 +77,7 @@ function validateBodyMix(bookmark) {
         components: Joi.array().items(componentsSchema).min(1).required()
     };
 
-    return Joi.validate(bookmark, schema);
+    return Joi.compile(schema).validate(bookmark);
 }
 
 
