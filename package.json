@@ -4,7 +4,7 @@
   "description": "project for balquess company",
   "main": "app.js",
   "scripts": {
-    "build": "nexe -r data/**/*",
+    "build": "pkg app.js --config package.json --targets host",
     "start": "node app.js",
     "seeder": "mongoimport --db Balquees --collection warehouses --file ./data/json/warehouses.json --jsonArray --drop"
   },
@@ -22,7 +22,10 @@
     "mongoose": "^6.13.12",
     "multer": "^2.5.0"
   },
+  "pkg": {
+    "assets": "data/**/*"
+  },
   "devDependencies": {
-    "nexe": "^3.3.2"
+    "@yao-pkg/pkg": "6.5.1"
   }
 }
